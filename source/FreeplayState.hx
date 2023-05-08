@@ -744,7 +744,6 @@ class FreeplayState extends MusicBeatState
 						FlxG.switchState(new TerminalState());
 					default:
 						FlxG.sound.music.fadeOut(1, 0);
-						PlayState.SONG = Song.loadFromJson(Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty));
 						PlayState.isStoryMode = false;
 						PlayState.storyDifficulty = curDifficulty;
 		
