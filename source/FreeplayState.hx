@@ -816,10 +816,6 @@ class FreeplayState extends MusicBeatState
 			curDifficulty = 1;
 		if (curDifficulty > 1)
 			curDifficulty = 0;
-		#if !switch
-		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
-		#end
-		curChar = Highscore.getChar(songs[curSelected].songName, curDifficulty);
 		updateDifficultyText();
 	}
 
@@ -894,17 +890,11 @@ class FreeplayState extends MusicBeatState
 
 		if (songs[curSelected].songName != 'Enter Terminal')
 		{
-			#if !switch
-			intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
-			#end
-
 			if(FlxG.save.data.freeplayMusic){
 				#if PRELOAD_ALL
 				FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
 				#end
-			}
-			
-			curChar = Highscore.getChar(songs[curSelected].songName, curDifficulty);
+			}	
 		}
 		
 		if (diffText != null)
