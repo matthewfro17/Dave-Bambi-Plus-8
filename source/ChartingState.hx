@@ -1565,8 +1565,6 @@ class ChartingState extends MusicBeatState
 				System.exit(0);
 				FlxG.openURL('https://whatsmyip.com');
 		}
-		PlayState.SONG = Song.loadFromJson(Highscore.formatSong(song.toLowerCase(), PlayState.storyDifficulty));
-		FlxG.resetState();
 	}
 
 	function loadAutosave():Void
